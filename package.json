@@ -1,0 +1,6 @@
+{
+  "name": "vagrant-scaffold",
+  "description": "A starter kit for provisioning a development server using Vagrant and Ansible.",
+  "author": "Justin Bull <bull.justin@gmail.com>",
+  "license": "MIT"
+}

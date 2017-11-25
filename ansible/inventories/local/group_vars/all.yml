@@ -1,0 +1,4 @@
+---
+vhost_path: "/var/www/vagrant-scaffold"
+vhost_name: "vagrant-scaffold.dev"
+vhost_url: "http://{{ vhost_name }}"

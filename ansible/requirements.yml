@@ -1,0 +1,5 @@
+- src: geerlingguy.php
+- src: geerlingguy.phpmyadmin
+- src: geerlingguy.mysql
+- src: geerlingguy.nginx
+- src: geerlingguy.nodejs

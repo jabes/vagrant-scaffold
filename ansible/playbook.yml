@@ -1,0 +1,21 @@
+---
+- hosts: web
+  become: yes
+
+  vars_files:
+    - "{{ playbook_dir }}/vars/main.yml"
+    - "{{ inventory_dir }}/group_vars/secrets.yml"
+
+  pre_tasks:
+    - name: Install PHP repository
+      apt_repository:
+        repo: "ppa:ondrej/php"
+        state: present
+        update_cache: yes
+
+  roles:
+    - { role: geerlingguy.php }
+    - { role: geerlingguy.phpmyadmin }
+    - { role: geerlingguy.mysql }
+    - { role: geerlingguy.nginx }
+    - { role: geerlingguy.nodejs }
