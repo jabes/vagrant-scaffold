@@ -31,8 +31,9 @@ Vagrant.configure("2") do |config|
     v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
   end
 
-  # Install python for ansible.
+  # Install python for ansible if needed.
   config.vm.provision "shell", inline: <<-SHELL
+    export DEBIAN_FRONTEND=noninteractive
     test -e /usr/bin/python || (apt-get -yq update && apt-get install -yq python-minimal)
   SHELL
 

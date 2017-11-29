@@ -17,8 +17,33 @@ The server will feature the following development environment:
 The following programs must be install on your machine before you may install.
 
 - [Vagrant](https://www.vagrantup.com/downloads.html) 2.0.x
+
+  ```bash
+  export VAGRANT_RELEASES="https://releases.hashicorp.com/vagrant"
+  export VAGRANT_VERSION="2.0.1"
+  export VAGRANT_DEB="vagrant_${VAGRANT_VERSION}_x86_64.deb"
+  curl -O "${VAGRANT_RELEASES}/${VAGRANT_VERSION}/${VAGRANT_DEB}"
+  sudo dpkg -i ${VAGRANT_DEB}
+  rm ${VAGRANT_DEB}
+  ```
+
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads) 5.2.x
+
+  ```bash
+  export VBOX_PATH="http://download.virtualbox.org/virtualbox/debian"
+  wget -q -O- ${VBOX_PATH}/oracle_vbox_2016.asc | sudo apt-key add -
+  echo "deb ${VBOX_PATH} $(lsb_release -cs) contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
+  sudo apt-get update
+  sudo apt-get install virtualbox-5.2
+  ```
+
 - [Ansible](http://docs.ansible.com/ansible/latest/intro_installation.html) 2.4.x
+
+  ```bash
+  sudo add-apt-repository -y ppa:ansible/ansible
+  sudo apt-get update
+  sudo apt-get install -y ansible
+  ```
 
 ## How To Install
 
@@ -60,11 +85,9 @@ This is a good time to take a coffee break.
 
 ```bash
 vagrant plugin install vagrant-hostsupdater
-vagrant box update
 vagrant up
 ```
 
 If everything went well..
 
 - web server: [http://vagrant-scaffold.dev](http://vagrant-scaffold.dev)
-- mysql admin : [http://vagrant-scaffold.dev/phpmyadmin](http://vagrant-scaffold.dev/phpmyadmin)

@@ -15,7 +15,6 @@
 
   roles:
     - { role: geerlingguy.php }
-    - { role: geerlingguy.phpmyadmin }
     - { role: geerlingguy.mysql }
     - { role: geerlingguy.nginx }
     - { role: geerlingguy.nodejs }

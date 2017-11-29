@@ -89,4 +89,4 @@ mysql_users:
     host: "localhost"
     priv: "{{ secret_mysql_db }}.*:ALL"
 
-nodejs_version: "8.9"
+nodejs_version: "8.x"
