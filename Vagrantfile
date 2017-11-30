@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
   config.vm.box_check_update = false
 
   # Create a private network, which allows host-only access to the machine using a specific IP.
-  config.vm.network "private_network", ip: "192.168.2.10"
+  config.vm.network "private_network", ip: "192.168.2.11"
 
   # Share an additional folder to the guest VM.
   # The first argument is the path on the host to the actual folder.
