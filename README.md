@@ -84,6 +84,7 @@ ansible-galaxy install -r requirements.yml
 This is a good time to take a coffee break.
 
 ```bash
+vagrant plugin install vagrant-vbguest
 vagrant plugin install vagrant-hostsupdater
 vagrant up
 ```
