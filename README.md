@@ -69,6 +69,8 @@ You can now view secret info using Ansible vault commands:
 ```bash
 cd ansible
 ansible-vault view inventories/local/group_vars/secrets.yml
+ansible-vault decrypt inventories/local/group_vars/secrets.yml
+ansible-vault encrypt inventories/local/group_vars/secrets.yml
 ```
 
 #### 3. Fetch required Ansible packages:
